@@ -1,0 +1,642 @@
+{
+	"info": {
+		"_postman_id": "67b849e5-a119-46db-a62e-fbcea8309a10",
+		"name": "Trabalho Final - API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Filmes",
+			"item": [
+				{
+					"name": "Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/movies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detalhe de um filme",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/movie/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movie",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cadastrar novo filme",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n {\"title\":\"Keanussss sidi 6\",\"photo_url\":\"R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=\",\"length\":1, \"released_date\": \"1996-03-31T03:00:00.000Z\"}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/movie/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movie",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar cadastro",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": " {\"title\":\"keanu_reeves\",\"photo_url\":\"R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=\",\"length\":1, \"released_date\": \"1951-03-31T03:00:00.000Z\"}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/movie/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movie",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/movie/7",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movie",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuario Filmes",
+			"item": [
+				{
+					"name": "Marcar um filme como favorito, assistido e para assistir",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"toWatch\": \"1\",\"watched\": \"0\",\"favorite\": \"0\",\"review\": \"0\",\"user_id\": \"1\",\"movie_id\": \"1\"}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/usermovie",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"usermovie"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar um filme favorito, assistido e para assistir",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"toWatch\": \"1\",\"watched\": \"1\",\"favorite\": \"0\",\"review\": \"0\"}\n"
+						},
+						"url": {
+							"raw": "localhost:3000/usermovie/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"usermovie",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Estatística - Tempo gasto com os filmes assistidos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/usermovie/statisitic/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"usermovie",
+								"statisitic",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lista assistidos, favoritos, etc",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/usermovie/lista/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"usermovie",
+								"lista",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar filme da lista",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/usermovie/1/lista/4",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"usermovie",
+								"1",
+								"lista",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Atores",
+			"item": [
+				{
+					"name": "Cadastrar novo ator",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"Keanussss mart\",\"photo_url\":\"R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=\",\"is_actor\":1, \"is_director\":0}\n\n "
+						},
+						"url": {
+							"raw": "localhost:3000/actor",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"actor"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"keanu-reeves\",\"photo_url\":\"R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=\"}\n"
+						},
+						"url": {
+							"raw": "localhost:3000/actor/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"actor",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/actor/6",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"actor",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Todos",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/actors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pesquisar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/actor/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"actor",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Diretor",
+			"item": [
+				{
+					"name": "Cadastrar novo diretor",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"keanu-reeves\",\"photo_url\":\"R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=\",\"is_actor\":0, \"is_director\":1}\n\n "
+						},
+						"url": {
+							"raw": "localhost:3000/director",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"director"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"name\":\"keanu-reeves\",\"photo_url\":\"R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=\"}\n"
+						},
+						"url": {
+							"raw": "localhost:3000/director/11",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"director",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Pesquisar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/director/8",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"director",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/director/11",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"director",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:3000/directors",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"directors"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuario",
+			"item": [
+				{
+					"name": "Pesquisar email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/user/rafaelbcdr@gmail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"user",
+								"rafaelbcdr@gmail.com"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "localhost:3000/auth/signin/fb",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Fields",
+						"value": "email,picture",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"fbToken\":\"EAAGX6qCVjcIBAP8F7hbhqvUWh4ay6fTwwLyPiC3SZAaBSKnOuEFaZCMLCYAhUxZCpj3CjclTjzWdCrr6IRvhpxajzKQBLEQHLm9gNZAtPeJ44Sg1f9BXN6sn6iQkbgJMmBKzZC3ZBaBuQ1p5epf49fxRgEm7mxVdh6EygNZC6Bv5uzFtW0g4hq1XgOdsz2kZCenuTsHSKW0NDMRigf1X2mSAe4yu6pdWxOPzHd7js26L4pj7zIkuXULp\"\r\n}\r\n"
+				},
+				"url": {
+					"raw": "localhost:3000/auth/signin/fb",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth",
+						"signin",
+						"fb"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
